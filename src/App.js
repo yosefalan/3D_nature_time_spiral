@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Canvas } from '@react-three/fiber';
+import BigBang from './BigBang'
+import Malik from './Malik'
+import * as THREE from 'three'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Canvas
+      flat
+      dpr={1}
+      gl={{ alpha: false, stencil: false, antialias: false, depth: false }}
+      camera={{ position: [8, 0, 10], near: 0.5, fov: 35 }}>
+        {/* <BigBang /> */}
+        <Malik/>
+      </Canvas>
     </div>
   );
 }
